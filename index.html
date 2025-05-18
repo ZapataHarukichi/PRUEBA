@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Climbing y Algoritmos Genéticos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container text-center my-5">
+        <h1 class="display-5 fw-bold text-info">Hill Climbing y Algoritmos Genéticos</h1>
+    </div>
+    
+    <section id="introduccion">
+        <div class="p-4 bg-light rounded shadow-sm">
+            <h2 class="mb-3 text-secondary">Introducción</h2>
+            <p class="lead">
+                Hill Climbing y los Algoritmos Genéticos son dos técnicas de búsqueda.}
+                Ambos buscan soluciones óptimas, pero lo hacen de formas distintas
+            </p>
+        </div>   
+    </section> 
+    <section id="hill-climbing">
+        <div class="p-4 bg-white rounded shadow-sm border">
+            <h2 class="text-success mb-">¿Qué es Hill Climbing?</h2>
+            <p>
+                Hill Climbing es un algoritmo de búsqueda heurística utilizado para encontrar la mejor solución posible (óptimo local)
+                subiendo paso a paso hacia soluciones cada vez mejores.
+            </p>
+            <p>
+                Funciona empezando desde una solución inicial y luego se mueve a
+                una solución vecina si esta es mejor. El proceso se repite hasta que no hay ninguna solución vecina mejor.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3 class="h5 text-primary">Ventajas:</h3>
+                    <ul>
+                        <li>Fácil de implementar</li>
+                        <li>Rápido en problemas simples</li>
+                    </ul>
+                </div>   
+                <div class="col-md-6">
+                    <h3 class="h5 text-danger">Desventajas:</h3>
+                    <ul>
+                        <li>Puede quedarse atrapado en óptimas locales</li>
+                        <li>No explora todo el espacio de soluciones</li>
+                    </ul>
+                </div>   
+            </div>
+            
+            <div class="text-center my-4">
+                <h4>Problema del Viajante</h4>
+                <img src="https://blogs.sas.com/content/sasla/files/2019/09/modelo1.jpg" class="img-fluid" alt="Ejemplo de Hill Climbing" class="img-fluid" style="max-height: 500px;">
+                <p class="mt-2 tect-muted">Minimizar la distancia recorrida por el viajante al visitar varias ciudades.</p>
+
+            </div>
+        </div>
+    </section>
+    
+    <section id = "algoritmos-geneticos">
+        <h2>¿Qué son los algoritmos genéticos?</h2>
+        <p>
+            Los Algoritmos Genéticos (AG) son métodos de optimización inspirados en la evolución biológica.
+            Funcionan mediante una población de soluciones que evoluciona a través de operadores como selección, cruce y mutación.
+        </p>
+        <p>
+            Cada solución se representa como un "cromosoma" (generalmente una cadena de bits, números o caracteres).
+            A lo largo de generaciones, las mejores soluciones se seleccionan para reproducirse y generar nuevas posibles soluciones.
+        </p>
+        <h3 class="mt-5 mb-3">Principales etapas de un AG:</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Etapa 1-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/inicializacion.png" class="card-img-top" alt="Inicialización">
+                <div class="card-body">
+                    <h5 class="card-title">Inicialización</h5>
+                    <p class="card-text">Se genera una población aleatoria de soluciones.</p>
+                </div>
+                </div>
+            </div>
+            <!--Etapa 2-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/evaluacion.png" class="card-img-top" alt="Evaluación">
+                <div class="card-body">
+                    <h5 class="card-title">Evaluación</h5>
+                    <p class="card-text">Se mide qué tan buena es cada solución (fitness).</p>
+                </div>
+                </div>
+            </div>
+            <!--Etapa 3-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/seleccion.png" class="card-img-top" alt="Selección">
+                <div class="card-body">
+                    <h5 class="card-title">Selección</h5>
+                    <p class="card-text">Se eligen las mejores soluciones para reproducirse.</p>
+                </div>
+                </div>
+            </div>
+
+            <!--Etapa 4-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/cruce.png" class="card-img-top" alt="Cruce">
+                <div class="card-body">
+                    <h5 class="card-title">Cruce</h5>
+                    <p class="card-text">Se combinan dos soluciones para crear una nueva.</p>
+                </div>
+                </div>
+            </div>
+
+            <!--Etapa 5-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/mutacion.png" class="card-img-top" alt="Mutación">
+                <div class="card-body">
+                    <h5 class="card-title">Mutación</h5>
+                    <p class="card-text">Se modifica aleatoriamente una parte de la solución.</p>
+                </div>
+                </div>
+            </div>
+
+            <!--Etapa 6-->
+            <div class="col">
+                <div class="card h-100">
+                <img src="img/repeticion.png" class="card-img-top" alt="Repetición">
+                <div class="card-body">
+                    <h5 class="card-title">Repetición</h5>
+                    <p class="card-text">El proceso se repite por varias generaciones.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3 class="h5 text-primary">Ventajas:</h3>
+                    <ul>
+                        <li>Pueden explorar amplios espacios de búsqueda.</li>
+                        <li>Son útiles para problemas complejos donde no se conoce la forma del óptimo.</li>
+                    </ul>
+                </div>   
+                <div class="col-md-6">
+                    <h3 class="h5 text-danger">Desventajas:</h3>
+                    <ul>
+                        <li>Requieren ajustar muchos parámetros (tamaño de población, tasa de mutación, etc.).</li>
+                        <li>Son más lentos que métodos directos como Hill Climbing.</li>
+                    </ul>
+                </div>   
+            </div>
+    </section>
+    <section id="ag-palabra">
+        <h2>Encontrar la palabra con Algoritmos Genéticos</h2>
+        <form id="targetForm" class="mb-3">
+            <label for="targetInput" class="form-label">Escribe la palabra objetivo:</label>
+            <input type="text" class="form-control" id="targetInput" placeholder="Ejemplo: GENETICA" required>
+            <button type="submit" class="btn btn-primary mt-2">Iniciar búsqueda</button>
+        </form>
+        <div style="background: #f5f5f5; padding: 1em; font-family: monospace;">
+            <div id="output"></div>
+        </div>
+    </section>
+    <script src="GENETICO.JS"></script>
+
+    <section id="comparacion">
+        <h2 class="mb-4">Comparación: Hill Climbing vs Algoritmos Genéticos</h2>
+        <p>Ambos algoritmos son estrategias de optimización, pero tienen enfoques diferentes.</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                <th scope="col">Características</th>
+                <th scope="col">Hill Climbing</th>
+                <th scope="col">Algoritmos Genéticos</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Estrategia</th>
+                <td>Búsqueda local</td>
+                <td>Búsqueda poblacional</td>
+            </tr>
+            <tr>
+                <th scope="row">Punto de partida</th>
+                <td>Una solución inicial</td>
+                <td>Varias soluciones iniciales</td>
+            </tr>
+            <tr>
+                <th scope="row">Exploración del espacio</th>
+                <td>Muy limitada (puede quedar atrapado en óptimos locales)</td>
+                <td>Amplia (mejor evita óptimos locales)</td>
+            </tr>
+            <tr>
+                <th scope="row">Mecanismos</th>
+                <td>Evaluación y mejora incrementales</td>
+                <td>Selección, cruce y mutación</td>
+            </tr>
+            <tr>
+                <th scope="row">Velocidad</th>
+                <td>Rápido en problemas simples</td>
+                <td>Más lento pero robusto</td>
+            </tr>
+            <tr>
+                <th scope="row">Ideal para</th>
+                <td>Problemas con paisajes simples y bien definidos</td>
+                <td>Problemas complejos, con muchas soluciones posibles</td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
